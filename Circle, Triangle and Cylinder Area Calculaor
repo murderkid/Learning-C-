@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+void input();
+float Area_circle(float radius);
+float Area_triangle(float height, float base);
+double Area_cylinder(double height, double radius);
+
+
+
+void main() 
+{
+	input();
+}
+
+void input() 
+{
+	float r, b;
+	double h;
+	char Answer = 'y';
+	while (Answer == 'y' || Answer == 'Y')
+	{
+		cout << "#####Welcome to Area Calculator######" << endl <<
+			"1) Press 1 to calculate area of a circle." << endl <<
+			"2) Press 2 to calculate area of a triangle." << endl <<
+			"3) Press 3 to calculate area of a cylinder." << endl <<
+			"Enter your choice: ";
+		int choice;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			cout << "Please enter the radious of the circle: ";
+			cin >> r;
+			 Area_circle(r);
+			 cout << "The area of circle with radius " << r << " is: " << Area_circle(r) << endl;
+			break;
+		case 2:
+			cout << "Please enter the hight and base of the triangle: " << endl;
+			cout << "Hight: ";
+			cin >> h;
+			cout << "Base: ";
+			cin >> b;
+			Area_triangle( h, b);
+			cout << "The area of the triangle of hight " << h << " and base " << b << " is: " << Area_triangle(h, b) << endl;
+			break;
+		case 3:
+			cout << "Please enter the radious of the Cylinder: ";
+			cin >> r;
+			cout << "Please enter the hight of the Cylinder: ";
+			cin >> h;
+			 Area_cylinder( h, r);
+			 cout << "The area of the Cylinder of hight " << h << " and radious " << r << " is: " << Area_cylinder(h, r) << endl;
+			break;
+		default:
+			cout << "Invalid input please try again";
+		}
+		cout << "\nDear user if you want to repeat the program enter y: ";
+		cin >> Answer;
+	}
+
+}
+
+float Area_circle(float radius) 
+{
+	float Area = 3.142 * pow(radius, 2);
+	return Area;
+}
+
+float Area_triangle(float height, float base)
+{
+	float Area = (height * base) / 2;
+	return Area;
+}
+
+double Area_cylinder(double height, double radius)
+{
+	float Area = (2 * 3.142 * radius * height) + (2 * 3.142 * pow(radius, 2));
+	return Area;
+}
