@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+
+void main() 
+{
+	int n;
+
+	cout << "Enter the number you want to find the factorial of: ";
+	cin >> n;
+	
+	for (int r = 1; r < n + 1; ++r)  //1
+	{
+		int i = r + 1;
+		int x = 1;
+		for (i <= r; --i;)
+		{
+			x *= i;
+		}
+		cout << "\n" << r << "! = " << x;
+	}
+}
